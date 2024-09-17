@@ -138,7 +138,7 @@ const ProfileDrawer = () => {
         <div className="flex justify-center mt-3">
           <img
             className="w-24 h-24 rounded-full bg-cover"
-            src={user?.photoURL ? user?.photoURL : userLogo}
+            src={user?.photoURL ? user?.photoURL :{ userLogo}}
             alt="User Photo"
           />
         </div>
