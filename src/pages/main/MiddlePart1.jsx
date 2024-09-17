@@ -3,37 +3,40 @@ import image from "../../assets/middle-banner-logo.png";
 
 const MiddlePart1 = () => {
   return (
-   <div className="mt-24 mb-11">
-     <div className="   flex items-center flex-col lg:flex-row  p-5 justify-between  gap-5">
-     <div className=" w-1/2">
-     <img src={image} alt="" />
-     </div>
+    <div className="mt-16 mb-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-4">
+        {/* Image Section */}
+        <div className="w-full lg:w-1/2">
+          <img src={image} alt="Middle Banner Logo" className="w-full h-auto rounded-lg" />
+        </div>
 
-      <div className=" lg:w-1/2  mx-auto  ">
-        <h1 className="lg:text-6xl text-3xl">We are more than multiple service</h1>
-        <p className="text-2xl mt-3">
-          This is a type of resturent which typically serves food and drink, in
-          addition to light refreshments such as baked goods or snacks. The term
-          comes frome the rench word meaning food
-        </p>
-      <div className=" ">
-      <div className="grid grid-cols-2 mb-1 mt-3">
-          <p>Online Ordering</p>
-          <p>24/7 Availability</p>
+        {/* Text Section */}
+        <div className="w-full lg:w-1/2">
+          <h1 className="text-3xl lg:text-5xl font-bold">
+            We are more than multiple services
+          </h1>
+          <p className="text-lg lg:text-2xl mt-4">
+            This is a type of restaurant that typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes from the French word meaning food.
+          </p>
+          
+          {/* Service List */}
+          <div className="mt-6 space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <p>Online Ordering</p>
+              <p>24/7 Availability</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <p>Advanced Reservations</p>
+              <p>Curated Dining Spaces</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <p>Top Chefs</p>
+              <p>Immaculate Kitchens</p>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-2 mb-1">
-          <p>Advanced Reservations</p>
-          <p>Curated Dining Spaces</p>
-        </div>
-        <div className="grid grid-cols-2 mb-1">
-          <p>Top Chefs</p>
-          <p>Immaculate Kitchens</p>
-        </div>
-      </div>
-       
       </div>
     </div>
-   </div>
   );
 };
 

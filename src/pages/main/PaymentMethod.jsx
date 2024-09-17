@@ -25,15 +25,12 @@ const PaymentMethod = () => {
   };
 
   return (
-    <div className="mt-10">
-      <h1 className="text-6xl font-bold  text-center ">Payment Method </h1>
+    <div className="mt-10 px-4 md:px-8">
+      <h1 className="text-3xl md:text-6xl font-bold text-center mb-8">Payment Method</h1>
       <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md mt-10">
         {/* Name your Card */}
-
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Name your Card
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Name your Card</label>
           <div className="flex items-center border border-gray-300 rounded-md px-2">
             <FaUser className="text-gray-500 mr-2" />
             <input
@@ -46,9 +43,7 @@ const PaymentMethod = () => {
 
         {/* Card Number */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Card Number
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Card Number</label>
           <div className="flex items-center border border-gray-300 rounded-md px-2">
             <FaShoppingCart className="text-gray-500 mr-2" />
             <input
@@ -59,15 +54,14 @@ const PaymentMethod = () => {
           </div>
         </div>
 
-        <div className="flex gap-x-10">
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              CCV
-            </label>
+        {/* CCV and Expiry Date */}
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="mb-4 flex-1">
+            <label className="block text-sm font-medium text-gray-700">CCV</label>
             <div className="flex items-center border border-gray-300 rounded-md px-2">
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Enter password"
+                placeholder="Enter CCV"
                 className="w-full py-2 px-2 text-gray-700 focus:outline-none"
               />
               <button
@@ -80,18 +74,13 @@ const PaymentMethod = () => {
             </div>
           </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Expiry Date
-            </label>
+          <div className="mb-4 flex-1">
+            <label className="block text-sm font-medium text-gray-700">Expiry Date</label>
             <div className="flex items-center border border-gray-300 rounded-md px-2">
               <FaCalendarAlt className="text-gray-500 mr-2" />
               <input
                 type="date"
-                placeholder="MM/YY"
                 className="w-full py-2 px-2 text-gray-700 focus:outline-none"
-                name=""
-                id=""
               />
             </div>
           </div>
@@ -99,7 +88,7 @@ const PaymentMethod = () => {
 
         <button
           onClick={handleOpenModal}
-          className="w-full p-2 bg-gray-500 rounded-lg mt-3 text-2xl text-white font-bold"
+          className="w-full p-2 bg-gray-500 rounded-lg mt-3 text-xl text-white font-bold"
         >
           Payment
         </button>
@@ -107,28 +96,18 @@ const PaymentMethod = () => {
         {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-1/3 relative">
-              <div className="w-full  ">
-                <div className=" p-4 w-1/2 mx-auto">
-                  <button
-                    onClick={handleCloseModal}
-                    className="btn bg-primary btn-sm btn-circle btn-ghost absolute top-2 right-2"
-                  >
-                    ✕
-                  </button>
-                  <div className="hero-content text-center">
-                    <div className="max-w-md">
-                      <h1 className="text-2xl font-bold ">
-                        Transaction Successful
-                      </h1>
-                      <p className="py-6">
-                        Your top up has been successful done
-                      </p>
-                      <h4>Total Pay</h4>
-                      <h4>$200.00</h4>
-                    </div>
-                  </div>
-                </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+              <div className="text-center">
+                <h1 className="text-2xl font-bold">Transaction Successful</h1>
+                <p className="py-4">Your top-up has been successfully completed.</p>
+                <h4 className="text-lg font-semibold">Total Pay</h4>
+                <h4 className="text-xl font-bold">$200.00</h4>
               </div>
             </div>
           </div>

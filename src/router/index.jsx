@@ -9,6 +9,7 @@ import PaymentMethod from "../pages/main/PaymentMethod";
 import Payment from "../pages/payment/Payment";
 import Auth from "../layouts/auth/Auth";
 import Register from "../pages/auth/Register";
+import Login from "../pages/auth/Login";
 
 const router = createBrowserRouter([
     {
@@ -43,10 +44,8 @@ const router = createBrowserRouter([
           path:'/addToCart',
           element:<AddToCart></AddToCart>,
         },
-       
-
-        
       ]
+
     },
 
     {
@@ -64,11 +63,17 @@ const router = createBrowserRouter([
     },
 
     {
-      path:'/',
+      path:'/auth',
       element:<Auth></Auth>,
       children:[
+           {
+          path: "login",
+          element: <Login />
+      },
+
+        
         {
-          path:'/reg',
+          path:'reg',
           element:<Register></Register>
         }
       ]

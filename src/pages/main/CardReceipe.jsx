@@ -1,29 +1,26 @@
-import React from 'react'
-import SingleCard from '../../components/SingleCard'
-import { useLoaderData } from 'react-router-dom'
+import React from 'react';
+import SingleCard from '../../components/SingleCard';
+import { useLoaderData } from 'react-router-dom';
 
 const CardReceipe = () => {
-    const cards = useLoaderData()
+  const cards = useLoaderData();
+  
   return (
-    <div className=''>
-        
-        <div className='my-10'>
+    <div className="max-w-7xl mx-auto p-4">
+      <div className="my-10 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold">
+          Explore <span className="text-primary">Yummy Recipe</span>
+        </h1>
+      </div>
 
-            <h1 className='text-5xl font-bold '>Explore <span className='text-primary'>Yummy Recipe</span></h1>
-        </div>
-
-        {/* map here  */}
-
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4  '>
-           {
-            cards.map((item)=>(
-                <SingleCard key={item.id} item={item}></SingleCard>
-            ))
-            
-           }
-        </div>
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {cards.map((item) => (
+          <SingleCard key={item.id} item={item} />
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default CardReceipe
+export default CardReceipe;
