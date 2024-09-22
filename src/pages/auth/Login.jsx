@@ -37,7 +37,7 @@ const Login = () => {
   // Google sign-in handler
   const handleGoogleSignIn = async () => {
     try {
-      const result = await signInWithGoogle();
+       await signInWithGoogle();
 
       // Navigate user to the intended route
       navigate(from, { replace: true });

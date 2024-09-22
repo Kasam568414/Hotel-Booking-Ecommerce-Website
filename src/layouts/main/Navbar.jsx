@@ -143,7 +143,7 @@ const ProfileDrawer = () => {
             alt="User Photo"
           />
         </div>
-        <p className="text-center text-lg font-semibold mt-4">{user?.displayName}</p>
+        <p className="text-center text-lg font-semibold mt-4">{user ?.displayName}</p>
 
         <button className="flex items-center gap-2 mt-4 text-[#F8FAFC] text-[25px]">
           <BiUserCircle />
