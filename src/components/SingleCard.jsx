@@ -17,7 +17,7 @@ const SingleCard = ({ item }) => {
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
               {title}
             </h2>
-            <p className="mt-2 text-gray-600 text-sm sm:text-base">
+            <p className="mt-2 text-gray-700  ">
               {description}
             </p>
             <p className="mt-2 text-gray-600 text-xl sm:text-2xl font-bold">
